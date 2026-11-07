@@ -18,14 +18,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.siyu.footwalk.presentation.theme.FootWalkTheme
+import com.siyu.footwalk.ui.presentation.theme.FootWalkTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            FootWalkTheme {
+            _root_ide_package_.com.siyu.footwalk.ui.presentation.theme.FootWalkTheme {
                 ThemeCheckMain()
             }
         }
@@ -53,5 +53,5 @@ fun ThemeCheckMain() {
 @Preview(showBackground = true)
 @Composable
 fun ThemeCheckMainPreview() {
-    FootWalkTheme { ThemeCheckMain() }
+    _root_ide_package_.com.siyu.footwalk.ui.presentation.theme.FootWalkTheme { ThemeCheckMain() }
 }
