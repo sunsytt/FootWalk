@@ -15,6 +15,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.siyu.footwalk.model.TodaySummary
+import com.siyu.footwalk.ui.components.ProgressRing
+import com.siyu.footwalk.ui.components.formatKm
+import com.siyu.footwalk.ui.components.formatSteps
 
 @Composable
 fun TodaySummaryCard(summary: TodaySummary, modifier: Modifier = Modifier) {
