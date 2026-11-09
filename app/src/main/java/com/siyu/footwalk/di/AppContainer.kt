@@ -24,7 +24,7 @@ class AppContainer(context: Context) {
 
     // Un solo lugar para cambiar la dirección de la API.
     // Emulador -> tu PC: http://10.0.2.2:3000/   |   AWS: http://IP_PUBLICA/
-    private val baseUrl = "http://10.0.2.2:3000/"
+    private val baseUrl = "http://34.235.48.172/"
 
     private val json = Json {
         ignoreUnknownKeys = true

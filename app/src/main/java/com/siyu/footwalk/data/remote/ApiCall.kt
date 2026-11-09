@@ -1,5 +1,6 @@
 package com.siyu.footwalk.data.remote
 
+import android.util.Log
 import com.siyu.footwalk.data.remote.dto.ErrorDto
 import com.siyu.footwalk.model.AppException
 import kotlinx.serialization.SerializationException
@@ -17,7 +18,8 @@ internal suspend fun <T> safeApiCall(json: Json, block: suspend () -> T): T =
     } catch (e: HttpException) {
         throw e.toAppException(json)
     } catch (e: IOException) {
-        throw AppException("No se pudo conectar con el servidor. Revisa tu conexión.")
+    Log.e("FootWalk", "Error de red: ${e::class.simpleName}: ${e.message}", e)
+    throw AppException("No se pudo conectar con el servidor. Revisa tu conexión.")
     } catch (e: SerializationException) {
         throw AppException("Respuesta inesperada del servidor.")
     }
