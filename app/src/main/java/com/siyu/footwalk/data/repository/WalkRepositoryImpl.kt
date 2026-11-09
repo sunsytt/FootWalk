@@ -11,6 +11,7 @@ import com.siyu.footwalk.model.Walk
 import com.siyu.footwalk.model.WalkInput
 import com.siyu.footwalk.model.WalksOverview
 import kotlinx.serialization.json.Json
+import java.time.LocalDate
 
 class WalkRepositoryImpl(
     private val api: WalkApi,
@@ -29,7 +30,8 @@ class WalkRepositoryImpl(
             throw e
         }
 
-    override suspend fun getOverview(): WalksOverview = call { api.getWalks().toModel() }
+    override suspend fun getOverview(): WalksOverview =
+        call { api.getWalks(LocalDate.now().toString()).toModel() }
 
     override suspend fun getWalk(id: Int): Walk = call { api.getWalk(id).toModel() }
 
